@@ -98,7 +98,7 @@ const Navbar = () => {
 
 
   <div className="navbar-end">
-    <a className="btn text-xl">< IoGitBranch /></a>
+    <a  href="https://github.com/talhahzahid" target="_blank" className="btn text-xl">< IoGitBranch /></a>
   </div>
 </div>
     </>

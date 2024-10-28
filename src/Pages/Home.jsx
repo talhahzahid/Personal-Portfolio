@@ -74,13 +74,19 @@ const Home = () => {
         <h2 className='text-xl'>Feel free to <span className='text-[#0e98ba]'>connect</span> with me</h2>
         <div className='flex justify-center gap-7 text-2xl mt-4 cursor-pointer focus:ring focus:ring-violet-300	 '>
            <div className="border border-gray-300 rounded-xl p-2 transition-transform transform hover:scale-110 focus:ring focus:ring-violet-300">
+            <a href="https://www.linkedin.com/in/talhahzahid/" target="_blank">
         <FaLinkedinIn />
+            </a>
       </div>
       <div className="border border-gray-300 rounded-xl p-2 transition-transform transform hover:scale-110 focus:ring focus:ring-violet-300">
+        <a href="https://github.com/talhahzahid" target="_blank">
         <FaGithub />
+        </a>
       </div>
       <div className="border border-gray-300 rounded-xl p-2 transition-transform transform hover:scale-110 focus:ring focus:ring-violet-300">
+        <a href="https://www.instagram.com/talzx7/" target="_blank">
         <SiInstagram />
+        </a>
       </div> 
         </div>
       </div>
