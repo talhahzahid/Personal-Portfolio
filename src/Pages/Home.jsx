@@ -6,7 +6,8 @@ import { FaGithub } from "react-icons/fa6";
 import { SiInstagram } from "react-icons/si";
 
 
-
+import profileImg  from '/src/assets/profile-pic.png'
+import avatar from '/src/assets/Avatar-Profile-Vector-180x180.png'
 
 
 
@@ -38,8 +39,9 @@ const Home = () => {
           </h1>
         </div>
         <div>
-          <img src="src/profile-pic.png" alt="Loading.." width='300px' />
-        </div>
+          {/* <img src={img12} alt="" width='300px' /> */}
+          <img src={profileImg} alt="Profile" width="300px" />
+          </div>
       </div>
       {/* first section ended */}
 
@@ -61,7 +63,7 @@ const Home = () => {
           </h2>
         </div>
         <div>
-          <img src="src/assets/Avatar-Profile-Vector-180x180.png" alt="" />
+          <img src={avatar} alt="" />
         </div>
       </div>
       {/* Second section ended*/}
