@@ -63,7 +63,7 @@ const Home = () => {
           </h2>
         </div>
         <div>
-          <img src={avatar} alt="" />
+          <img src={avatar} alt="loading..." />
         </div>
       </div>
       {/* Second section ended*/}
