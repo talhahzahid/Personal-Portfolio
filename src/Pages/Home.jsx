@@ -38,7 +38,7 @@ const Home = () => {
           </h1>
         </div>
         <div>
-          <img src="src/assets/profile-pic.png" alt="Loading.." width={300} />
+          <img src="src/profile-pic.png" alt="Loading.." width={300} />
         </div>
       </div>
       {/* first section ended */}
