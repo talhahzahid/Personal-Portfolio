@@ -1,21 +1,21 @@
 import React from 'react'
 
-const Card = () => {
+const Card = (props) => {
   return (
     <>
     <div className="card bg-[#008080] text-white w-96 shadow-xl">
   <figure className="px-10 pt-10">
     <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes"
+      src={props.image}
+      alt="Image"
       className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
-    <h2 className="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions ">
-      <button className="btn btn-ghost bg-[#1D428A]">Buy Now</button>
-      <button className="btn btn-ghost bg-[#1D428A]">Buy Now</button>
+    <h1 className=" text-2xl card-title">{props.title}</h1>
+    <p>{props.des}</p>
+    <div className="card-actions mt-1 ">
+      <button className="btn btn-ghost bg-[#1D428A]"> <a href={props.btn1}  target='_blank'>Demo</a></button>
+      <button className="btn btn-ghost bg-[#1D428A]"> <a href={props.btn2}  target='_blank'>GitHub</a></button>
     </div>
   </div>
 </div>
