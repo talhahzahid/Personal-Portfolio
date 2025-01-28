@@ -5,11 +5,8 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { SiInstagram } from "react-icons/si";
 
-
-import profileImg  from '/src/assets/profile-pic.png'
+import profileImg from '/src/assets/profile-pic.png'
 import avatar from '/src/assets/Avatar-Profile-Vector-180x180.png'
-
-
 
 const Home = () => {
   const waveAnimation = {
@@ -34,14 +31,14 @@ const Home = () => {
               <IoMdHand size={50} />
             </motion.div>
           </div>
-          <h1 className='mt-2'> <span className='text-[#0e98ba] font-semibold' >I'M TALHA ZAHID</span><br />
+          <h1 className='mt-2'> <span className='text-[#0e98ba] font-semibold' >I'M TALHA ZAHID </span><br />
             MERN STACK DEVELOPER
           </h1>
         </div>
         <div>
           {/* <img src={img12} alt="" width='300px' /> */}
           <img src={profileImg} alt="Profile" width="300px" />
-          </div>
+        </div>
       </div>
       {/* first section ended */}
 
@@ -75,21 +72,21 @@ const Home = () => {
         <h1 className='text-3xl'>FIND ME ON</h1>
         <h2 className='text-xl'>Feel free to <span className='text-[#0e98ba]'>connect</span> with me</h2>
         <div className='flex justify-center gap-7 text-2xl mt-4 cursor-pointer focus:ring focus:ring-violet-300	 '>
-           <div className="border border-gray-300 rounded-xl p-2 transition-transform transform hover:scale-110 focus:ring focus:ring-violet-300">
+          <div className="border border-gray-300 rounded-xl p-2 transition-transform transform hover:scale-110 focus:ring focus:ring-violet-300">
             <a href="https://www.linkedin.com/in/talhahzahid/" target="_blank">
-        <FaLinkedinIn />
+              <FaLinkedinIn />
             </a>
-      </div>
-      <div className="border border-gray-300 rounded-xl p-2 transition-transform transform hover:scale-110 focus:ring focus:ring-violet-300">
-        <a href="https://github.com/talhahzahid" target="_blank">
-        <FaGithub />
-        </a>
-      </div>
-      <div className="border border-gray-300 rounded-xl p-2 transition-transform transform hover:scale-110 focus:ring focus:ring-violet-300">
-        <a href="https://www.instagram.com/talzx7/" target="_blank">
-        <SiInstagram />
-        </a>
-      </div> 
+          </div>
+          <div className="border border-gray-300 rounded-xl p-2 transition-transform transform hover:scale-110 focus:ring focus:ring-violet-300">
+            <a href="https://github.com/talhahzahid" target="_blank">
+              <FaGithub />
+            </a>
+          </div>
+          <div className="border border-gray-300 rounded-xl p-2 transition-transform transform hover:scale-110 focus:ring focus:ring-violet-300">
+            <a href="https://www.instagram.com/_talhazahid7/" target="_blank">
+              <SiInstagram />
+            </a>
+          </div>
         </div>
       </div>
 
