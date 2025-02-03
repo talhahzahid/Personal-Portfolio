@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../Components/Card'
 
+import fullStack from "/public/FullStack Blogging Project.png"
 import BloggingApp from '/src/assets/Blogging App.png'
 import TodoApp from '/src/assets/Todo App.png'
 
@@ -16,11 +17,11 @@ const Project = () => {
       <h1 className='text-center text-3xl'>React Js </h1>
       <div className='flex justify-center flex-wrap gap-[3rem] mt-4 p-8'>
         <Card
-          image={TodoApp}
+          image={fullStack}
           title='Full Stack Blogging App'
           des="MONGO db , Express Js , React , Node js  With features like secure authentication, profile management, and the ability to create, edit, or delete blogs, take control of your content like never before"
-          btn1='https://todoapp-theta-five.vercel.app/'
-          btn2='https://github.com/talhahzahid/React-Todo-App'
+          btn1='/'
+          btn2='https://github.com/talhahzahid/Blog-Server'
         />
         <Card
           image={BloggingApp}
