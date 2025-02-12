@@ -20,7 +20,7 @@ const Project = () => {
           image={fullStack}
           title='Full Stack Blogging App'
           des="MONGO db , Express Js , React , Node js  With features like secure authentication, profile management, and the ability to create, edit, or delete blogs, take control of your content like never before"
-          btn1='/'
+          btn1='https://github.com/talhahzahid/Blog-Server'
           btn2='https://github.com/talhahzahid/Blog-Server'
         />
         <Card
