@@ -1,53 +1,62 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
-
-  const clientMessage = (event) => {
-    event.preventDeafault();
-    console.log('hello');
-  }
+  const clientMessage = (e) => {
+    e.preventDefault();
+    console.log("Form submitted");
+    // You can add toast or backend logic here
+  };
 
   return (
-    <div className='bg-[#151515] text-white h-[100vh]'>
+    <div className="bg-[#0e0e0e] min-h-screen text-white py-16 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="max-w-2xl mx-auto text-center"
+      >
+        <h1 className="text-4xl font-bold mb-4 tracking-wide text-white">
+          Get In <span className="text-[#0e98ba]">Touch</span>
+        </h1>
+        <p className="text-gray-300 mb-10">
+          I'd love to hear about your project. Share your details and let's
+          collaborate to build something great!
+        </p>
 
-      <div className='text-center pt-10 font-semibold'>
-        <h1 className='text-3xl'>GET IN TOUCH</h1>
-        <h2 className='text-xl'>I would like to know the final requirements of your project. Please get in touch with me and share details about your project.
-        </h2>
-      </div>
-      <div className='text-center mt-7'>
-        <form onSubmit={clientMessage} className='flex flex-col items-center'>
+        <form
+          onSubmit={clientMessage}
+          className="bg-[#1a1a1a] p-6 rounded-2xl shadow-xl border border-gray-700 space-y-5"
+        >
           <input
             type="text"
-            className='mt-3 w-full max-w-xs sm:max-w-md p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black'
-            placeholder='Name'
+            placeholder="Your Name"
+            className="w-full p-3 bg-[#0f0f0f] border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e98ba] text-white"
+            required
           />
-          <br />
           <input
-            type="text"
-            className='mt-1 w-full max-w-xs sm:max-w-md p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black'
-            placeholder='Email'
+            type="email"
+            placeholder="Your Email"
+            className="w-full p-3 bg-[#0f0f0f] border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e98ba] text-white"
+            required
           />
-          <br />
           <textarea
-            className='mt-1 w-full max-w-xs sm:max-w-md p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black'
-            placeholder='Leave Comment'
-            rows={7}
-          />
-          <br />
+            placeholder="Your Message"
+            rows="6"
+            className="w-full p-3 bg-[#0f0f0f] border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e98ba] text-white"
+            required
+          ></textarea>
+
           <button
             type="submit"
-            className='btn btn-primary mt-2 w-full max-w-xs sm:max-w-md p-2 rounded-md bg-blue-500 text-white hover:bg-blue-600 focus:outline-none'
+            className="w-full py-3 bg-[#0e98ba] text-white font-semibold rounded-md hover:bg-[#0b7ea2] transition-colors duration-300"
           >
             Send Message
           </button>
         </form>
-      </div>
-
-
+      </motion.div>
     </div>
+  );
+};
 
-  )
-}
-
-export default Contact
+export default Contact;

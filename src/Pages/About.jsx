@@ -1,104 +1,91 @@
-import React from 'react'
-import { FaHandPointRight } from "react-icons/fa";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
+import React from "react";
+import { FaHandPointRight, FaBootstrap, FaGitAlt } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { FaBootstrap } from "react-icons/fa";
-import { GrJs } from "react-icons/gr";
 import { GrReactjs } from "react-icons/gr";
-import { DiNodejs } from "react-icons/di";
-import { SiExpress } from "react-icons/si";
-import { DiMongodb } from "react-icons/di";
-import { FaGitAlt } from "react-icons/fa";
-import { SiDaisyui } from "react-icons/si";
-import { SiAntdesign } from "react-icons/si";
-
-
-
-
-
-
-
-
-
-
+import { DiNodejs, DiMongodb } from "react-icons/di";
+import { SiExpress, SiDaisyui, SiAntdesign, SiAngular } from "react-icons/si";
 
 const About = () => {
+  const hobbies = ["Playing Football", "Swimming", "Exploring New Tech"];
+
+  const frontendSkills = [
+    { icon: <GrReactjs className="text-[#61DAFB]" />, label: "React.js" },
+    { icon: <SiAngular className="text-red-600" />, label: "Angular" },
+  ];
+
+  const backendSkills = [
+    { icon: <DiNodejs className="text-green-500" />, label: "Node.js" },
+    { icon: <SiExpress className="text-gray-400" />, label: "Express.js" },
+    { icon: <DiMongodb className="text-green-700" />, label: "MongoDB" },
+  ];
+
+  const uiSkills = [
+    {
+      icon: <RiTailwindCssFill className="text-[#38BDF8]" />,
+      label: "Tailwind CSS",
+    },
+    { icon: <FaBootstrap className="text-purple-600" />, label: "Bootstrap" },
+    { icon: <SiDaisyui className="text-pink-400" />, label: "DaisyUI" },
+    { icon: <SiAntdesign className="text-blue-600" />, label: "Ant Design" },
+    { icon: <FaGitAlt className="text-orange-600" />, label: "Git" },
+  ];
+
+  const renderSkillGroup = (title, skills) => (
+    <div>
+      <h2 className="text-2xl font-semibold mb-4 text-center text-[#0e98ba]">
+        {title}
+      </h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center gap-2 transition-all duration-300 hover:scale-105"
+          >
+            <div className="text-5xl">{skill.icon}</div>
+            <span className="text-lg text-gray-300">{skill.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
-    <div className='bg-[#151515] text-white h-full'>
-
-      {/* Introduction myself start */}
-      <div className='flex justify-around flex-wrap items-center pt-[4rem] text-center container '>
-        <div className='font-semibold'>
-          <h1 className='text-center text-3xl'>Know Who <span className='text-[#0e98ba]'>I'M</span> </h1>
-          <h2 className='text-2xl mt-4'>
-            Hi Everyone, I am Talha Zahid from Karachi, Pakistan. <br />
-            I am a MERN Stack Developer
-          </h2>
-          <h1 className='mt-[2rem] text-xl'>Apart from coding, some other activities that I love to do!</h1>
-          <h1 className='mt-3'><FaHandPointRight className='inline' /> Football Playing</h1>
-          <h1><FaHandPointRight className='inline' /> Swimming</h1>
-          <h1><FaHandPointRight className='inline' />Travelling</h1>
-        </div>
+    <div className="bg-[#151515] text-white min-h-screen px-6 py-16">
+      {/* ========= Intro Section ========= */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
         <div>
-          <img src="src/assets/about.aee0f771fbfc1e7b8fa8.png" alt="" width={400} />
+          <h1 className="text-4xl font-bold mb-6 text-center md:text-left">
+            Get to Know <span className="text-[#0e98ba]">Me</span>
+          </h1>
+          <p className="text-lg leading-7 mb-4">
+            I’m <strong>Talha Zahid</strong>, a passionate{" "}
+            <span className="text-[#0e98ba]">Full Stack Web Developer</span>{" "}
+            based in Karachi, Pakistan. I specialize in building fast, scalable,
+            and responsive web applications using modern frameworks.
+          </p>
+          <p className="text-lg leading-7 mb-4">
+            With a strong foundation in both frontend and backend technologies,
+            I turn business needs into elegant digital solutions.
+          </p>
+        </div>
+        <div className="flex justify-center">
+          <img
+            src="src/assets/about.aee0f771fbfc1e7b8fa8.png"
+            alt="About"
+            className="w-[300px] md:w-[400px] rounded-lg shadow-lg"
+          />
         </div>
       </div>
-      {/* Introduction myself ended */}
 
-
-      {/* Skill section started */}
-      <h1 className='text-3xl text-center mt-7'>Professional Skillset</h1>
-      <div className='flex justify-center items-center flex-wrap gap-10 first text-[7rem] mt-10'>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1><FaHtml5 /></h1>
-        </div>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1><FaCss3Alt /></h1>
-        </div>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1> <RiTailwindCssFill /></h1>
-        </div>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1><FaBootstrap /></h1>
-        </div>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1><GrJs /></h1>
-        </div>
+      {/* ========= Skills Section ========= */}
+      <div className="mt-20 max-w-5xl mx-auto">
+        <h1 className="text-4xl text-center font-bold mb-12">My Tech Stack</h1>
+        {renderSkillGroup("Frontend", frontendSkills)}
+        {renderSkillGroup("Backend", backendSkills)}
+        {renderSkillGroup("UI & Tools", uiSkills)}
       </div>
-      <div className='flex justify-center items-center flex-wrap gap-10 first text-[7rem] mt-10'>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1><GrReactjs /></h1>
-        </div>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1><DiNodejs /></h1>
-        </div>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1> <SiExpress /></h1>
-        </div>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1><DiMongodb /></h1>
-        </div>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1><FaGitAlt /></h1>
-        </div>
-      </div>
-      <div className='flex justify-center items-center flex-wrap gap-10 first text-[7rem] mt-10 pb-20'>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-          <h1><SiDaisyui /></h1>
-        </div>
-        <div className="border border-[#0e98ba] p-4 rounded-sm transition-transform duration-300 hover:scale-105 hover:bg-[#0066b2] focus-visible:scale-105 focus-visible:bg-[#e0f7fa] cursor-pointer">
-      <h1>
-        <SiAntdesign />
-      </h1>
     </div>
+  );
+};
 
-      </div>
-      {/* Skill section ended*/}
-
-
-    </div>
-  )
-}
-
-export default About
+export default About;

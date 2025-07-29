@@ -1,47 +1,56 @@
-import React from 'react'
-import Card from '../Components/Card'
+import React from "react";
+import Card from "../Components/Card";
 
-import fullStack from "/public/FullStack Blogging Project.png"
-import BloggingApp from '/src/assets/Blogging App.png'
-import TodoApp from '/src/assets/Todo App.png'
+import microfinance from "/src/assets/microfinace.png";
+import auth from "/src/assets/authentication.png";
+import TodoApp from "/src/assets/Todo App.png";
 
 const Project = () => {
   return (
-    <div className='bg-[#151515] text-white h-full'>
-
-      <div className='text-center p-6 font-semibold'>
-        <h1 className='text-3xl'>My Recent <span className='text-[#0e98ba]'>Works</span></h1>
-        <h2 className='text-xl'>Here are a few project</h2>
+    <div className="bg-[#151515] text-white min-h-screen px-4 md:px-10 py-16">
+      {/* ===== Header Section ===== */}
+      <div className="text-center mb-10">
+        <h1 className="text-4xl font-bold mb-3">
+          My Recent <span className="text-[#0e98ba]">Projects</span>
+        </h1>
+        <p className="text-lg text-gray-300">
+          Here are a few of my featured full-stack and frontend projects.
+        </p>
+        <div className="w-24 h-[3px] bg-[#0e98ba] mx-auto mt-4 rounded-full" />
       </div>
 
-      <h1 className='text-center text-3xl'>React Js </h1>
-      <div className='flex justify-center flex-wrap gap-[3rem] mt-4 p-8'>
-        <Card
-          image={fullStack}
-          title='Full Stack Blogging App'
-          des="MONGO db , Express Js , React , Node js  With features like secure authentication, profile management, and the ability to create, edit, or delete blogs, take control of your content like never before"
-          btn1='https://github.com/talhahzahid/Blog-Server'
-          btn2='https://github.com/talhahzahid/Blog-Server'
-        />
-        <Card
-          image={BloggingApp}
-          title='Blogging App'
-          des="Blogging App With React JS using Firebase with authentication "
-          btn1='https://react-blogging-app-lime.vercel.app/'
-          btn2='https://github.com/talhahzahid/React-Blogging-App'
-        />
-        <Card
-          image={TodoApp}
-          title='Todo App'
-          des="Todo App For Manage Task with React js"
-          btn1='https://todoapp-theta-five.vercel.app/'
-          btn2='https://github.com/talhahzahid/React-Todo-App'
-        />
+      {/* ===== React Projects Section ===== */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-semibold text-[#0e98ba] mb-6 text-center">
+          React.js Based Applications
+        </h2>
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Card
+            image={microfinance}
+            title="Microfinance App"
+            des="A full-stack MERN app for managing microfinance loan applications. Users can calculate loan estimates, register via email, and submit requests with guardian info. Admins can view, filter, and update applications. Includes CNIC checks, validations, and clean UI."
+            btn1="https://microfinance-app-frontend-phi.vercel.app/"
+            btn2="https://github.com/talhahzahid?tab=repositories"
+            btn3="https://microfinance-app-dashboard.vercel.app/"
+          />
+          <Card
+            image={auth}
+            title="Authentication"
+            des="A secure React + Node.js authentication system with JWT, login/signup, protected routes, and frontend/backend validation for a smooth user experience."
+            btn1="https://authentication-frontend-beta.vercel.app/"
+            btn2="https://github.com/talhahzahid?tab=repositories"
+          />
+          <Card
+            image={TodoApp}
+            title="Todo App"
+            des="A simple React-based Todo App for managing daily tasks, with clean UI and responsive design."
+            btn1="https://todoapp-theta-five.vercel.app/"
+            btn2="https://github.com/talhahzahid/React-Todo-App"
+          />
+        </div>
       </div>
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;
