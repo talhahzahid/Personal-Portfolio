@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import AnimatedCursor from "react-animated-cursor";
-
+import { ToastContainer } from "react-toastify";
 // Layout and Pages
 import Layout from "./Layout.jsx";
 import Home from "./Pages/Home.jsx";
@@ -22,7 +22,18 @@ const App = () => {
         outerScale={2}
         clickables={["a", "button", "input", "textarea", "select", ".link"]}
       />
-
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

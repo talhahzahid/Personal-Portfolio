@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-
+import { db } from "../Firebase/Config.js";
+import { collection, addDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
+import { Loader2 } from "lucide-react";
 const Contact = () => {
-  const clientMessage = (e) => {
+  const name = useRef();
+  const email = useRef();
+  const message = useRef();
+  const [loading, setLoading] = useState(false);
+  // send message to firebase
+  const clientMessage = async (e) => {
     e.preventDefault();
-    console.log("Form submitted");
-    // You can add toast or backend logic here
+    const nameVal = name.current.value.trim();
+    const emailVal = email.current.value.trim();
+    const messageVal = message.current.value.trim();
+    if (!nameVal || !emailVal || !messageVal) {
+      toast.error("All fields are required.");
+      return;
+    }
+    if (!/\S+@\S+\.\S+/.test(emailVal)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const docRef = await addDoc(collection(db, "messages"), {
+        name: nameVal,
+        email: emailVal,
+        message: messageVal,
+        createdAt: new Date(),
+      });
+      toast.success("Message sent successfully!");
+      console.log("Document written with ID: ", docRef.id);
+      name.current.value = "";
+      email.current.value = "";
+      message.current.value = "";
+    } catch (e) {
+      console.error("Error adding document: ", e);
+      toast.error("Internal Server Error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -30,28 +66,32 @@ const Contact = () => {
         >
           <input
             type="text"
+            ref={name}
             placeholder="Your Name"
             className="w-full p-3 bg-[#0f0f0f] border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e98ba] text-white"
-            required
           />
           <input
             type="email"
+            ref={email}
             placeholder="Your Email"
             className="w-full p-3 bg-[#0f0f0f] border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e98ba] text-white"
-            required
           />
           <textarea
             placeholder="Your Message"
+            ref={message}
             rows="6"
             className="w-full p-3 bg-[#0f0f0f] border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e98ba] text-white"
-            required
           ></textarea>
 
           <button
             type="submit"
-            className="w-full py-3 bg-[#0e98ba] text-white font-semibold rounded-md hover:bg-[#0b7ea2] transition-colors duration-300"
+            className="w-full cursor-pointer py-3 bg-[#0e98ba] text-white font-semibold rounded-md hover:bg-[#0b7ea2] transition-colors duration-300"
           >
-            Send Message
+            {loading ? (
+              <Loader2 className="animate-spin h-5 w-5 mx-auto" />
+            ) : (
+              "Send Message"
+            )}
           </button>
         </form>
       </motion.div>
