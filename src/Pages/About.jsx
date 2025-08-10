@@ -4,7 +4,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { GrReactjs } from "react-icons/gr";
 import { DiNodejs, DiMongodb } from "react-icons/di";
 import { SiExpress, SiDaisyui, SiAntdesign, SiAngular } from "react-icons/si";
-
+import aboutImage from "/src/assets/about.aee0f771fbfc1e7b8fa8.png"
 const About = () => {
   const hobbies = ["Playing Football", "Swimming", "Exploring New Tech"];
 
@@ -70,7 +70,7 @@ const About = () => {
         </div>
         <div className="flex justify-center">
           <img
-            src="src/assets/about.aee0f771fbfc1e7b8fa8.png"
+            src={aboutImage}
             alt="About"
             className="w-[300px] md:w-[400px] rounded-lg shadow-lg"
           />
